@@ -32,6 +32,9 @@ body::before {
 .container {
     text-align: center;
     z-index: 10;  /* Đảm bảo nội dung nằm trên viền sáng */
+    display: flex;
+    flex-direction: column; /* Đảm bảo các phần tử bên trong container xếp dọc */
+    align-items: center; /* Căn giữa các phần tử */
 }
 
 /* Tiêu đề trang */
@@ -41,7 +44,7 @@ h1 {
     margin-bottom: 10px;
     text-transform: uppercase;
     letter-spacing: 3px;
-    text-shadow: 0 0 10px #faa4f6, 0 0 20px #faa4f6, 0 0 30px #faa4f6; /* Ánh sáng xung quanh chữ */
+    text-shadow: 0 0 10px #ff00ff, 0 0 20px #ff00ff, 0 0 30px #ff00ff; /* Ánh sáng xung quanh chữ */
 }
 
 /* Dòng chữ nhỏ dưới tiêu đề */
@@ -51,25 +54,93 @@ h1 {
     margin-top: 0;
     margin-bottom: 20px;
     font-style: italic;
-    text-shadow: 0 0 5px #faa4f6, 0 0 10px #faa4f6; /* Ánh sáng nhẹ cho chữ */
+    text-shadow: 0 0 5px #ff00ff, 0 0 10px #ff00ff; /* Ánh sáng nhẹ cho chữ */
 }
 
 /* Nút bấm */
 .btn {
     display: inline-block;
-    margin-top: 20px;
+    margin-top: 20px; /* Tạo khoảng cách giữa các nút */
     padding: 10px 20px;
-    background-color: #1b1a1a;
+    background-color: #1b1b1b;
     color: white;
     text-decoration: none;
     border-radius: 5px;
-    box-shadow: 0 0 15px #797979; /* Đổ bóng mờ cho nút */
+    box-shadow: 0 0 15px #8b8b8b; /* Đổ bóng mờ cho nút */
     transition: all 0.3s ease;
 }
 
 .btn:hover {
-    background-color: #0d0d0e;
-    box-shadow: 0 0 25px #111111; /* Hiệu ứng sáng khi hover */
+    background-color: #1a1a1a;
+    box-shadow: 0 0 25px #252525; /* Hiệu ứng sáng khi hover */
+}
+
+/* Nút Hướng dẫn */
+.guide-btn {
+    margin-top: 20px; /* Đảm bảo khoảng cách dưới nút "Chuyển đến trang thứ 2" */
+    background-color: #1b1b1b;
+    padding: 10px 20px;
+    color: white;
+    font-size: 16px;
+    border-radius: 5px;
+    box-shadow: 0 0 15px #8b8b8b;
+    transition: all 0.3s ease;
+}
+
+/* Hiệu ứng hover cho nút Hướng dẫn */
+.guide-btn:hover {
+    background-color: #1a1a1a;
+    box-shadow: 0 0 25px #252525;
+}
+
+/* Hộp hướng dẫn */
+.guide-popup {
+    display: none;  /* Ẩn hộp hướng dẫn khi chưa nhấn nút */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);  /* Màu nền đen bán trong suốt */
+    color: white;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;  /* Đảm bảo hộp hướng dẫn hiển thị trên tất cả các phần tử */
+}
+
+.guide-content {
+    background-color: #333;
+    padding: 30px;
+    border-radius: 10px;
+    text-align: center;
+    width: 80%;
+    max-width: 600px;
+    margin: 0 auto;
+    margin-top: 10px;
+}
+
+.guide-content h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+.guide-content p {
+    font-size: 16px;
+}
+
+.close-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 24px;
+    color: white;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+}
+
+.close-btn:hover {
+    color: #f44336; /* Màu đỏ khi hover */
 }
 
 /* Phong cách cho hộp thông điệp ở trang thứ 2 */

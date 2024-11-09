@@ -9,9 +9,48 @@
 <body>
     <div class="container">
         <h1>Vị thần của những quyết định</h1>
-        <!-- Dòng chữ nhỏ thêm vào dưới tiêu đề -->
         <p class="subtitle">The Chronicles of the Kings</p>
-        <a href="Luachontuban.html" class="btn">Quyết định của bạn</a>
+        
+        <!-- Nút chuyển đến trang thứ 2 -->
+        <a href="Luachontuban.html" class="btn">Lời tiên tri</a>
+        
+        <!-- Nút Hướng dẫn nằm bên dưới -->
+        <button class="btn guide-btn" onclick="showGuide()">Hướng dẫn</button>
     </div>
+
+    <!-- Hộp hướng dẫn -->
+    <div id="guide-popup" class="guide-popup">
+        <div class="guide-content">
+            <span class="close-btn" onclick="closeGuide()">&times;</span>
+            <p>Một trò chơi</p>
+            <p>Một nhà tiên tri</p>
+            <p> </p>
+            <h2>Hướng dẫn sử dụng trang web</h2>
+            <p>(1) Đặt tay lên điện thoại (chuột).</p>
+            <p>(2) Nhắm mắt, hoàn toàn tập trung vào điều muốn hỏi.</p>
+            <p>(3) Đặt một câu hỏi (nói to hoặc hình dung câu hỏi trong đầu).</p>
+            <p>(4) Khi trực giác mách bảo thời điểm thích hợp, bấm vào lời tiên tri và bạn sẽ có câu trả lời.</p>
+            <p>(5) Ấn vào góc phải trên cùng và lặp lại quy trình cho các câu hỏi khác</p>
+            <p> </p>
+            <h2>Lưu ý</h2>
+            <p>(1) Cách đặt câu hỏi và mức độ tập trung sẽ quyết định độ chính xác của thông điệp.</p>
+            <p>(2) Câu hỏi nên được diễn đạt cụ thể, theo dạng lựa chọn.</p>
+            <p>(3) Nên sử dụng tay thuận để mở lời tiên tri.</p>
+            <p>(4) Nếu có thêm chỉ dẫn ấn vào góc phải trên cùng và lặp lại quy trình cho các câu hỏi khác</p>
+            <p>Chúc bạn sử dụng trang web vui vẻ!</p>
+        </div>
+    </div>
+
+    <script>
+        // Hiển thị hộp hướng dẫn
+        function showGuide() {
+            document.getElementById('guide-popup').style.display = 'block';
+        }
+
+        // Đóng hộp hướng dẫn
+        function closeGuide() {
+            document.getElementById('guide-popup').style.display = 'none';
+        }
+    </script>
 </body>
 </html>
