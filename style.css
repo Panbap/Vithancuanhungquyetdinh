@@ -1,0 +1,120 @@
+/* Cấu trúc chung cho cả trang */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #000;  /* Màu nền đen */
+    color: white;
+    flex-direction: column; /* Đặt các phần tử theo chiều dọc */
+    overflow: hidden;
+    position: relative;
+}
+
+/* Viền trắng bao quanh trang */
+body::before {
+    content: "";
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    right: 10px;
+    bottom: 10px;
+    border: 5px solid white; /* Viền trắng */
+    border-radius: 15px; /* Viền bo tròn */
+    box-shadow: 0 0 30px white; /* Đổ bóng trắng xung quanh viền */
+    pointer-events: none; /* Đảm bảo không ảnh hưởng đến các phần tử khác */
+}
+
+/* Các phần tử chính trong container */
+.container {
+    text-align: center;
+    z-index: 10;  /* Đảm bảo nội dung nằm trên viền sáng */
+}
+
+/* Tiêu đề trang */
+h1 {
+    font-size: 36px;
+    color: #fff;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    text-shadow: 0 0 10px #faa4f6, 0 0 20px #faa4f6, 0 0 30px #faa4f6; /* Ánh sáng xung quanh chữ */
+}
+
+/* Dòng chữ nhỏ dưới tiêu đề */
+.subtitle {
+    font-size: 18px;
+    color: #fff;
+    margin-top: 0;
+    margin-bottom: 20px;
+    font-style: italic;
+    text-shadow: 0 0 5px #faa4f6, 0 0 10px #faa4f6; /* Ánh sáng nhẹ cho chữ */
+}
+
+/* Nút bấm */
+.btn {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: #1b1a1a;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    box-shadow: 0 0 15px #797979; /* Đổ bóng mờ cho nút */
+    transition: all 0.3s ease;
+}
+
+.btn:hover {
+    background-color: #0d0d0e;
+    box-shadow: 0 0 25px #111111; /* Hiệu ứng sáng khi hover */
+}
+
+/* Phong cách cho hộp thông điệp ở trang thứ 2 */
+.message-box {
+    display: inline-block;
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.2); /* Màu nền trong suốt để thêm vẻ mờ ảo */
+    border: 1px solid #fff; /* Viền trắng */
+    border-radius: 10px;
+    max-width: 400px;
+    margin-top: 20px;
+    color: white;
+    box-shadow: 0 0 10px #faa4f6, 0 0 30px #faa4f6; /* Đổ bóng sáng quanh hộp */
+}
+
+/* Câu tiếng Việt */
+#random-message-vi {
+    font-size: 18px;
+    text-shadow: 0 0 5px #faa4f6, 0 0 10px #faa4f6; /* Ánh sáng nhẹ cho chữ */
+}
+
+/* Câu dịch tiếng Anh */
+#random-message-en {
+    font-size: 16px;
+    color: #070707; /* Màu chữ khác cho câu tiếng Anh */
+    font-style: italic;
+    text-shadow: 0 0 5px #faa4f6, 0 0 10px #faa4f6; /* Ánh sáng nhẹ cho chữ */
+}
+
+/* Phong cách cho nút quay lại trang đầu */
+.back-btn {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    background-color: #070707;
+    padding: 10px 15px;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    box-shadow: 0 0 15px #070707;
+    transition: all 0.3s ease;
+}
+
+.back-btn:hover {
+    background-color: #f1f1f1;
+    box-shadow: 0 0 25px #f1f1f1; /* Hiệu ứng sáng khi hover */
+}

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vị thần của những quyết định</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Hộp thông điệp với câu ngẫu nhiên tiếng Việt và tiếng Anh -->
+        <div class="message-box">
+            <p id="random-message-vi"></p> <!-- Câu tiếng Việt -->
+            <p id="random-message-en" class="translated"></p> <!-- Câu tiếng Anh dịch -->
+        </div>
+    </div>
+
+    <!-- Nút quay lại trang đầu -->
+    <a href="index.html" class="btn back-btn">   </a>
+
+    <script>
+        // Dòng chữ ngẫu nhiên tiếng Việt
+        const messagesVI = [
+            "Chúc bạn một ngày tốt lành!",
+            "Hãy luôn cố gắng và nỗ lực!",
+            "Mọi thứ đều có thể nếu bạn tin tưởng!",
+            "Hãy làm những điều bạn yêu thích!",
+            "Cuộc sống là một hành trình tuyệt vời!"
+        ];
+
+        // Dịch câu tiếng Việt sang tiếng Anh
+        const messagesEN = [
+            "Wish you a wonderful day!",
+            "Always try and strive!",
+            "Everything is possible if you believe!",
+            "Do what you love!",
+            "Life is a beautiful journey!"
+        ];
+
+        // Lấy câu ngẫu nhiên
+        function getRandomMessage() {
+            const randomIndex = Math.floor(Math.random() * messagesVI.length);
+            return {
+                vi: messagesVI[randomIndex],   // Câu tiếng Việt
+                en: messagesEN[randomIndex]    // Câu dịch tiếng Anh
+            };
+        }
+
+        window.onload = function() {
+            const message = getRandomMessage();
+
+            // Hiển thị câu tiếng Việt
+            document.getElementById("random-message-vi").innerText = message.vi;
+            // Hiển thị câu dịch tiếng Anh
+            document.getElementById("random-message-en").innerText = message.en;
+        };
+    </script>
+</body>
+</html>
