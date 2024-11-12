@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vị thần của những quyết định</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&family=Great+Vibes&family=Pacifico&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <!-- Hộp thông điệp với câu ngẫu nhiên tiếng Việt và tiếng Anh -->
+        <div  class="message-box">
+            <p id="random-message-vi"></p> <!-- Câu tiếng Việt -->
+            <p id="random-message-en" class="translated"></p> <!-- Câu tiếng Anh dịch -->
+        </div>
+    </div>
+
+    <!-- Nút quay lại trang đầu 
+    <a href="index.html" class="btn back-btn">   </a>-->
+
+    <script>
+        // Dòng chữ ngẫu nhiên tiếng Việt
+        const messagesVI = [
+        "Mở lòng đón nhận",
+            "Tận dụng trí tưởng tượng",
+            "Chuyện không như bạn nghĩ",
+            "Vượt tầm kiểm soát của bạn",
+            "Đôi khi cần tham vọng hơn",
+            "Mọi thứ tiến triển tốt",
+            "Tìm kiếm sự thật",
+            "Cứ đặt cược vào nó",
+            "Điều tốt đẹp sẽ đến vào lúc bạn không mong đợi",
+            "Phụ thuộc vào bạn",
+            "Đặt một mục tiêu mới",
+            "Chắc chắn",
+            "Cứ tin vào trực giác",
+            "Trong vài tuần tới",
+            "Bình tĩnh và suy nghĩ cẩn trọng",
+            "Bạn sẽ hạnh phúc với những gì đã làm",
+            "Kiên trì sẽ được đền đáp",
+            "Niềm vui chỉ là tạm thời",
+            "Đừng tò mò",
+            "Sắp có bước tiến mới",
+            "Bạn cần thích nghi",
+"Sẽ ổn thôi",
+"Buông bỏ và hòa vào dòng chảy",
+"Chờ đợi",
+"Tập trung vào điều thực sự quan trọng",
+"Quyết đoán",
+"Loại giải pháp đầu tiên",
+"Một điều mới mẻ sắp đến",
+"Đừng bỏ qua điều hiển nhiên",
+"Nghĩ thoáng ra",
+"Đừng cố chống lại sự thay đổi",
+"Rủi ro rất có thể sảy ra",
+"Giữ một thái độ tích cực",
+"Trừ khi bạn chỉ có một mình",
+"Cứ tận hưởng",
+"Cái gì nhanh đến thì nhanh đi",
+"Xem xét lại cách tiếp cận của bạn",
+"Điều đó ảnh hưởng đến cách người khác nhìn nhận bạn",
+"Không",
+"Không thuận lợi ở thời điểm này",
+"Quyết liệt",
+"Tốt hơn là không kỳ vọng",
+"Dù bạn làm gì hệ quả cũng lâu dài",
+"Thời điểm hoàn hảo",
+"Hạ thấp cái tôi và bạn sẽ nhận được nhiều hơn mất",
+"Tốt hơn là tiếp tục chờ đợi",
+"Ngưng phán xét",
+"Cười về điều đó",
+"Đừng quá thẩn trọng",
+"Điều đó là sự lãng phí tiền bạc",
+"Bạn cần sớm đưa ra quyết định",
+"Đừng để ý kiến của người khác ảnh hưởng",
+"Bạn sẽ phải thỏa hiệp",
+"Nâng cấp bằng mọi cách bạn có thể",
+"Can đảm lên",
+"Cứ đợi xem chuyện gì sẽ xảy ra",
+"Giữ cho riêng bạn",
+"Nó là điều hiển nhiên phải làm",
+"Cân nhắc lại",
+"Đừng đổ lỗi cho chính mình",
+"Ưu tiên những gì quan trọng",
+"Có",
+"Cam kết càng mạnh mẽ, càng dễ thành công",
+"Kiểm soát cảm súc",
+"Muộn còn hơn không",
+"Mặc kệ đi",
+"Đừng lo lắng",
+"Tìm kiếm thêm các lựa chọn khác",
+"Các sự kiện đáng kinh ngạc",
+"Thời điểm tốt để bắt đầu những thứ mới mẻ",
+"Rắc rối đã qua",
+"Đặt niềm tin vào chính mình",
+"Thời gian sẽ trả lời",
+"Khó khăn cần đối mặt",
+"Lắng nghe người bên cạnh",
+"Hài lòng với hiện tại",
+"Đừng nghi ngờ nữa",
+"Chuyện gì đến sẽ đến",
+"Cứ hành sử như bạn đã đạt được",
+"Điều đó không có ý nghĩa gì",
+"Suy nghĩ thực tế",
+"Bạn đã sẵn sàng",
+"Càng sớm càng tốt",
+"Tiếp tục",
+"Kiên định",
+"Cầu được ước thấy",
+"Tin vào phán đoán của mình",
+"Nói với người ấy điều đó có ý nghĩa thế nào với bạn",
+"Suy nghĩ cẩn trọng",
+"Tuyệt đối không",
+"Chủ động",
+"Loại bỏ những trở ngại từ chính bạn",
+"Đừng đợi",
+"Khẳng định mình",
+"Chỉ cần bạn nói lời cảm ơn",
+"Bạn biết bạn muốn gì",
+"Giải quyết sớm",
+"Quan sát kỹ và bạn sẽ có câu trả lời",
+"Nó sẽ mang lại may mắn",
+"Lập một danh sách những điều tại sao không",
+"Cảm xúc sẽ chi phối quyết định của bạn",
+"Không phải lúc thích hợp",
+"Một điều bạn không mong đợi",
+"Đôi khi phải chấp nhận hy sinh",
+"Nếu bạn tin",
+"Cơ hội mới sẽ đến",
+"Đừng do dự",
+"Đánh đổi xứng đáng",
+"Có còn hơn không",
+"Đi theo sự dẫn dắt của người khác",
+"Bạn sắp gặp một người giải quyết được vấn đề",
+"Không đáng để gắng sức",
+"Có thể",
+"Câu trả lời có thể đến bằng một ngôn ngữ khác",
+"Thổ lội những điều bạn nghĩ",
+"Đừng từ bỏ",
+"Đừng yêu cầu nhiều hơn vào lúc này",
+"Đừng đánh giá thấp bản thân",
+"Một bí mật sắp được đưa ra ánh sáng",
+"Cái giá phải nhận sẽ đắt",
+"Đừng cố hiểu",
+"Đã quá trễ",
+"Khó nhưng đáng",
+"Bạn sẽ thất vọng",
+"Có thể yên tâm",
+"Nắm bắt cơ hội",
+"Kiên nhẫn",
+"Rắc rối đang đến",
+"Chân thành sẽ có kết quả",
+"Dừng lại thôi",
+"Một điều gì đó sắp quay trở lại",
+"Để đẳm bảo có quyết định tốt nhất, cứ bình tĩnh",
+"Có một kết nối quan trọng đến một tình huống khác",
+"Bạn đã đúng",
+"Suy nghĩ cực đoan lúc này không giúp ích bạn",
+"Không cần quá lo lắng",
+"Đáng nghi",
+"Đừng trì hoãn thêm nữa",
+"Tin tốt sắp đến",
+"Đừng quá cứng nhắc",
+"Tiếp tục cố gắng",
+"Đừng đặt cược",
+"Cứ làm đi",
+"Chi phí thời gian",
+"Thiết lập thứ thự ưu tiên",
+"Chắc chắn là không",
+"Đừng miễn cưỡng",
+"Suy nghĩ đơn giản thôi",
+"Trong cái rủi có cái may",
+"Hỏi mẹ bạn",
+"Không vấn đề gì",
+"Hãy nói cho họ biết bạn cảm thấy thế nào",
+"Bạn phải đưa ra quyết định cuối cùng",
+"Một người quan trọng sắp xuất hiện",
+"Đừng quên bạn phải luôn vui vẻ",
+"Bước khỏi vùng an toàn",
+"Hành động ngay",
+"Nếu bạn làm như bạn đã nói",
+"Cố gắng thêm",
+"Lắng nghe cẩn thận và bạn sẽ có câu trả lời",
+"Suy nghĩ tích cực",
+"Điều đó không hợp lý",
+"Trân trọng thứ mà bạn có",
+"Bất kể chuyện  gì",
+"Niềm tin của bạn có thể bị phản bội",
+"Không lường trước được",
+"Nếu bạn không chịu đựng được",
+"Từ bỏ lựa chọn tốt",
+"Điều đó sẽ làm cho mọi thứ thú vị",
+"Tự lượng sức mình",
+"Bạn sẽ biết thứ bạn muốn biết",
+"Cố gắng thêm một lần nữa"
+            
+        ];
+
+        // Dịch câu tiếng Việt sang tiếng Anh
+        const messagesEN = [
+            "/Open your heart/",
+            "/User your imagination/",
+            "/Not what you think/",
+            "/Out of control/",
+            "/Sometimes you need to be more ambitious/",
+            "/Everything is going well/",
+            "/Seek the truth/",
+            "/Just be on it/",
+            "/Good things come when you don't expect them/",
+            "/It's up to you/",
+            "/Set a new goal/",
+            "/Of course/",
+            "/Trust your intuition/",
+            "/Within the next few weeks/",
+            "/Keep calm and take your time to think/",
+            "/You will be happy with what you did/",
+            "/Perseverance will pay off/",
+            "/Happiness in only temporary/",
+            "/Curiosity killed the cat",
+            "/A new step is coming/",
+            "/You will need to adapt/",
+            "---"
+
+        ];
+
+       // Lấy câu ngẫu nhiên
+function getRandomMessage() {
+    const randomIndex = Math.floor(Math.random() * messagesVI.length);
+    return {
+        vi: messagesVI[randomIndex],   // Câu tiếng Việt
+        en: messagesEN[randomIndex]    // Câu dịch tiếng Anh
+    };
+}
+window.onload = function() {
+    const message = getRandomMessage();
+
+    // Lấy các phần tử hiển thị câu
+    const viElement = document.getElementById("random-message-vi");
+    const enElement = document.getElementById("random-message-en");
+
+    // Đặt hiệu ứng cho câu tiếng Việt và tiếng Anh
+    fadeInBold(viElement, message.vi, 100);  // Tốc độ 100ms cho mỗi ký tự
+    fadeInBold(enElement, message.en, 100);
+};
+// Hiệu ứng chữ xuất hiện và đậm dần
+function fadeInBold(element, text, speed) {
+    element.innerHTML = text;  // Hiển thị toàn bộ nội dung
+    element.style.opacity = 0;  // Bắt đầu với opacity bằng 0 (không thấy)
+    element.style.fontWeight = '100'; // Bắt đầu với font-weight nhẹ
+
+    // Để các hiệu ứng CSS phát huy tác dụng
+    setTimeout(() => {
+        element.style.opacity = 1;  // Đặt opacity = 1 để chữ hiện lên từ từ
+        element.style.fontWeight = '600'; // Đặt font-weight tăng dần
+    }, 100); // Delay để cho các phần tử có thời gian "thiết lập" CSS
+}
+
+           // Lắng nghe sự kiện click vào phần tử có id 'redirectText'
+           document.getElementById('random-message-en').addEventListener('click', function() {
+            // Đưa người dùng đến một trang mới khi nhấn vào dòng chữ
+            window.location.href = 'index.html'; // Thay 'https://example.com' bằng URL bạn muốn
+        });
+    </script>
+</body>
+</html>

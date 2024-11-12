@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Vị thần của những quyết định</title>
     <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&family=Great+Vibes&family=Pacifico&display=swap" rel="stylesheet">
 </head>
 <body>
     <div class="container">
@@ -12,31 +13,31 @@
         <p class="subtitle">The Chronicles of the Kings</p>
         
         <!-- Nút chuyển đến trang thứ 2 -->
-        <a href="Luachontuban.html" class="btn">Lời tiên tri</a>
+        <a href="Quyetdinhtuban.html" class="btn" aria-label="Đi đến trang Lời tiên tri"><b>Gửi đến bạn</b></a>
         
         <!-- Nút Hướng dẫn nằm bên dưới -->
-        <button class="btn guide-btn" onclick="showGuide()">Hướng dẫn</button>
+        <button class="btn guide-btn" onclick="showGuide()" aria-label="Xem hướng dẫn">Hướng dẫn</button>
     </div>
 
     <!-- Hộp hướng dẫn -->
     <div id="guide-popup" class="guide-popup">
         <div class="guide-content">
             <span class="close-btn" onclick="closeGuide()">&times;</span>
-            <p>Một trò chơi</p>
-            <p>Một nhà tiên tri</p>
-            <p> </p>
-            <h2>Hướng dẫn sử dụng trang web</h2>
+            <h2>Một trò chơi</h2>
+            <h2>Một nhà tiên tri</h2>
+            <h3>Hướng dẫn sử dụng trang web</h3>
             <p>(1) Đặt tay lên điện thoại (chuột).</p>
             <p>(2) Nhắm mắt, hoàn toàn tập trung vào điều muốn hỏi.</p>
             <p>(3) Đặt một câu hỏi (nói to hoặc hình dung câu hỏi trong đầu).</p>
-            <p>(4) Khi trực giác mách bảo thời điểm thích hợp, bấm vào lời tiên tri và bạn sẽ có câu trả lời.</p>
-            <p>(5) Ấn vào góc phải trên cùng và lặp lại quy trình cho các câu hỏi khác</p>
-            <p> </p>
+            <p>(4) Khi trực giác mách bảo thời điểm thích hợp, bấm vào <b>Gửi đến bạn</b> và bạn sẽ có câu trả lời.</p>
+            <p>(5) Ấn vào dòng chữ tiếng anh để lặp lại quy trình cho các câu hỏi khác</p>
             <h2>Lưu ý</h2>
             <p>(1) Cách đặt câu hỏi và mức độ tập trung sẽ quyết định độ chính xác của thông điệp.</p>
             <p>(2) Câu hỏi nên được diễn đạt cụ thể, theo dạng lựa chọn.</p>
             <p>(3) Nên sử dụng tay thuận để mở lời tiên tri.</p>
-            <p>(4) Nếu có thêm chỉ dẫn ấn vào góc phải trên cùng và lặp lại quy trình cho các câu hỏi khác</p>
+            <p>(4) Nếu muốn có thêm chỉ dẫn ấn vào dòng chữ tiếng anh và lặp lại quy trình cho các câu hỏi khác</p>
+            <p><b>Không có gì là ngẫu nhiên</b></p>
+            <p><b>Mọi chuyện đều là tất nhiên</b></p>
             <p>Chúc bạn sử dụng trang web vui vẻ!</p>
         </div>
     </div>
@@ -44,7 +45,7 @@
     <script>
         // Hiển thị hộp hướng dẫn
         function showGuide() {
-            document.getElementById('guide-popup').style.display = 'block';
+            document.getElementById('guide-popup').style.display = 'flex';
         }
 
         // Đóng hộp hướng dẫn

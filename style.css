@@ -39,26 +39,52 @@ body::before {
 
 /* Tiêu đề trang */
 h1 {
+    font-family: 'Times VN', serif;
     font-size: 36px;
-    color: #fff;
+    color: #ffffff;
     margin-bottom: 10px;
     text-transform: uppercase;
     letter-spacing: 3px;
     text-shadow: 0 0 10px #ff00ff, 0 0 20px #ff00ff, 0 0 30px #ff00ff; /* Ánh sáng xung quanh chữ */
+    animation: glow 1.5s ease-in-out infinite alternate; /* Ánh sáng nhấp nháy */
+}
+
+@keyframes glow {
+    0% {
+        text-shadow: 0 0 10px #ff00ff, 0 0 20px #ff00ff, 0 0 30px #ff00ff;
+    }
+    50% {
+        text-shadow: 0 0 20px #ff00ff, 0 0 40px #ff00ff, 0 0 60px #ff00ff;
+    }
+    100% {
+        text-shadow: 0 0 30px #ff00ff, 0 0 50px #ff00ff, 0 0 70px #ff00ff;
+    }
 }
 
 /* Dòng chữ nhỏ dưới tiêu đề */
 .subtitle {
+    font-family: 'Caveat', cursive;
     font-size: 18px;
-    color: #fff;
+    color: #000000;
     margin-top: 0;
     margin-bottom: 20px;
     font-style: italic;
     text-shadow: 0 0 5px #ff00ff, 0 0 10px #ff00ff; /* Ánh sáng nhẹ cho chữ */
+    animation: fadeIn 2s ease-out; /* Hiệu ứng mờ dần */
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
 }
 
 /* Nút bấm */
 .btn {
+    font-family: 'Times VN', serif;
     display: inline-block;
     margin-top: 20px; /* Tạo khoảng cách giữa các nút */
     padding: 10px 20px;
@@ -68,33 +94,48 @@ h1 {
     border-radius: 5px;
     box-shadow: 0 0 15px #8b8b8b; /* Đổ bóng mờ cho nút */
     transition: all 0.3s ease;
+    transform: translateY(0); /* Đảm bảo không có dịch chuyển mặc định */
 }
 
 .btn:hover {
     background-color: #1a1a1a;
     box-shadow: 0 0 25px #252525; /* Hiệu ứng sáng khi hover */
+    transform: translateY(-4px); /* Di chuyển lên nhẹ khi hover */
+}
+
+.btn:active {
+    transform: scale(0.98); /* Nhấn nút tạo hiệu ứng co lại */
 }
 
 /* Nút Hướng dẫn */
 .guide-btn {
+    font-family: 'Caveat', cursive;
     margin-top: 20px; /* Đảm bảo khoảng cách dưới nút "Chuyển đến trang thứ 2" */
     background-color: #1b1b1b;
     padding: 10px 20px;
     color: white;
     font-size: 16px;
-    border-radius: 5px;
     box-shadow: 0 0 15px #8b8b8b;
     transition: all 0.3s ease;
+    transform: translateY(0); /* Đảm bảo không có dịch chuyển mặc định */
 }
 
 /* Hiệu ứng hover cho nút Hướng dẫn */
 .guide-btn:hover {
     background-color: #1a1a1a;
     box-shadow: 0 0 25px #252525;
+    transform: translateY(-4px); /* Di chuyển lên nhẹ khi hover */
 }
+
+/* Hiệu ứng khi nhấn nút */
+.guide-btn:active {
+    transform: scale(0.98); /* Nhấn nút tạo hiệu ứng co lại */
+}
+
 
 /* Hộp hướng dẫn */
 .guide-popup {
+    font-family: 'Times VN', serif;
     display: none;  /* Ẩn hộp hướng dẫn khi chưa nhấn nút */
     position: fixed;
     top: 0;
@@ -115,10 +156,12 @@ h1 {
     text-align: center;
     width: 80%;
     max-width: 600px;
+    max-height: 80vh;  /* Giới hạn chiều cao tối đa là 80% chiều cao màn hình */
+    overflow-y: auto;  /* Thêm thanh cuộn dọc khi nội dung vượt quá chiều cao */
     margin: 0 auto;
-    margin-top: 10px;
 }
 
+/* Các phần còn lại không thay đổi */
 .guide-content h2 {
     font-size: 24px;
     margin-bottom: 20px;
@@ -147,27 +190,41 @@ h1 {
 .message-box {
     display: inline-block;
     padding: 20px;
-    background-color: rgba(255, 255, 255, 0.2); /* Màu nền trong suốt để thêm vẻ mờ ảo */
-    border: 1px solid #fff; /* Viền trắng */
+    /*background-color: rgba(255, 255, 255, 0.2);  Màu nền trong suốt để thêm vẻ mờ ảo */
+    /*border: 1px solid #fff;  Viền trắng */
     border-radius: 10px;
     max-width: 400px;
     margin-top: 20px;
     color: white;
-    box-shadow: 0 0 10px #faa4f6, 0 0 30px #faa4f6; /* Đổ bóng sáng quanh hộp */
+    /*box-shadow: 0 0 10px #faa4f6, 0 0 30px #faa4f6;  Đổ bóng sáng quanh hộp */
 }
+
 
 /* Câu tiếng Việt */
 #random-message-vi {
-    font-size: 18px;
-    text-shadow: 0 0 5px #faa4f6, 0 0 10px #faa4f6; /* Ánh sáng nhẹ cho chữ */
+    font-family: 'Times VN', serif;
+    font-size: 22px;
+    text-shadow: 0 0 5px #000000, 0 0 10px #000000; /* Ánh sáng nhẹ cho chữ */
+    word-wrap: break-word; /* Ngắt từ dài khi cần */
+    overflow-wrap: break-word; /* Ngăn chặn tràn ra ngoài */
+    white-space: normal; /* Cho phép xuống dòng nếu cần */
+    opacity: 0;           /* Bắt đầu với độ mờ 0 */
+    font-weight: 100;     /* Bắt đầu với font-weight nhẹ */
+    transition: opacity 2s ease-in-out, font-weight 2s ease-in-out; /* Hiệu ứng mượt mà */
 }
 
 /* Câu dịch tiếng Anh */
 #random-message-en {
     font-size: 16px;
-    color: #070707; /* Màu chữ khác cho câu tiếng Anh */
+    color: #070707;
     font-style: italic;
     text-shadow: 0 0 5px #faa4f6, 0 0 10px #faa4f6; /* Ánh sáng nhẹ cho chữ */
+    word-wrap: break-word; /* Ngắt từ dài khi cần */
+    overflow-wrap: break-word; /* Ngăn chặn tràn ra ngoài */
+    white-space: normal; /* Cho phép xuống dòng nếu cần */
+    opacity: 0;           /* Bắt đầu với độ mờ 0 */
+    font-weight: 100;     /* Bắt đầu với font-weight nhẹ */
+    transition: opacity 2s ease-in-out, font-weight 2s ease-in-out; /* Hiệu ứng mượt mà */
 }
 
 /* Phong cách cho nút quay lại trang đầu */
